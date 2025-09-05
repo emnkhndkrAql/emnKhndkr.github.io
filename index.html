@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emon Khondoker - Portfolio</title>
+  <style>
+    /* ===== General Styles ===== */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { margin: 0; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== Hero Header ===== */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 6rem 1rem 3rem;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+    nav button, nav a {
+      margin: 0.25rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #38bdf8;
+      background: transparent;
+      color: #38bdf8;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    nav button:hover, nav a:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    /* ===== Modals ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      padding: 2rem;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #1e293b;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      text-align: left;
+      color: #e2e8f0;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .modal img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .close {
+      float: right;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #f87171;
+    }
+    .badge {
+      display: inline-block;
+      margin: 0.2rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      background: rgba(56,189,248,0.2);
+      color: #38bdf8;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== Contact Form ===== */
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 6px;
+    }
+    form button {
+      padding: 0.6rem 1.2rem;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #0ea5e9;
+    }
+
+    /* ===== Particle Background ===== */
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particles"></canvas>
+
+  <!-- Header -->
+  <header>
+<h1 class="techy">Emon Khondoker</h1>
+<p class="techy">
+I engineer software..
+</p>
+
+<style>
+.techy {
+  font-family: 'Roboto Mono', 'Courier New', monospace; /* modern code feel */
+  color: #0ef; /* tech-blue accent */
+  background: linear-gradient(90deg, #0ef 0%, #0ff 100%); /* subtle gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+
+p.techy i {
+  font-style: normal;
+  opacity: 0.7;
+  font-size: 0.95em;
+}
+</style>
+
+    <nav>
+      <button onclick="openModal('intro')">Showcase</button>
+      <button onclick="openModal('work')">Craftworks</button>
+      <button onclick="openModal('about')">Behind the Code</button>
+      <button onclick="openModal('contact')">Drop a Line</button>
+      <a href="#" download>📄 Credentials</a>
+    </nav>
+  </header>
+
+  <!-- Showcase Modal -->
+  <div id="intro" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('intro')">&times;</span>
+      <h2>Showcase</h2>
+      <img src="profile-image.jpg" alt="Profile">
+      <p>
+        I’m a person passionate about coding, software development, and building software that solves real-world problems. Starting with my lab experiments with C and progressing to larger projects in Java, I embrace every challenge and bug as an opportunity to learn and grow. 
+Throughout this journey, I’ve undertaken several personal and academic projects- some partially completed, others fully- depending on their scale. I have earnest curiosity, dedication, and love for designing software and coding.
+      </p>
+      <p>
+    My 
+        <a href="#" onclick="closeModal('intro');openModal('work')">craftworks</a>, your curiosity
+      </p>
+    </div>
+  </div>
+
+  <!-- Work Modal -->
+  <div id="work" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('work')">&times;</span>
+      <h2>Craftworks</h2>
+      <img src="revendo-project.jpg" alt="ReVendo Project">
+      <h3>ReVendo – Ongoing Project</h3>
+      <p><b>Digital Marketplace for Second-Hand Items in Bangladesh</b></p>
+      <p>
+        ReVendo is a secure, user-friendly platform designed to simplify second-hand transactions in Bangladesh. By connecting buyers and sellers efficiently, it reduces risks, ensures transparency, and encourages sustainable consumption. This ongoing project allows me to apply my skills in software development, system design, and problem-solving while creating a real-world solution that addresses everyday challenges.
+      </p>
+      <div>
+        <span class="badge">Java</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+      </div>
+      <p>
+        <a href="https://github.com/emnkhndkrAql/RevendoByTrivendo.git" target="_blank">🔗 View on GitHub</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div id="about" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('about')">&times;</span>
+      <h2>Behind the Code</h2>
+      <img src="about-background.jpg" alt="About Background">
+      <h3>Professional Background</h3>
+      <p>
+        I am a running student of BSc (Engg) in Software Engineering program at the University of Frontier Technologies, Bangladesh- based on Kaliakair, Gazipur.
+      </p>
+      <h3>Expertise Areas</h3>
+      <ul>
+        <li><b>Programming:</b> C, C++, Java</li>
+        <li><b>Web Development:</b> HTML, CSS</li>
+        <li><b>Software Engineering:</b> Algorithms, Data Structures</li>
+        <li><b>Tools:</b> Git, GitHub, CI/CD basics</li>
+      </ul>
+      <h3>Education</h3>
+      <ul>
+        <li>BSc (Engg) in Software Engineering (ongoing)</li>
+        <li>Completed coursework in System Modeling and Software Testing</li>
+        <li>Various online programming courses</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('contact')">&times;</span>
+      <h2>Drop a Line</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message" rows="5"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Emon Khondoker. Crafted with passion and code.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(e) {
+      document.querySelectorAll('.modal').forEach(m => {
+        if (e.target == m) m.style.display = 'none';
+      });
+    }
+
+    // ===== Particle Background with Lines =====
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = 2;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = (Math.random() - 0.5) * 1.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = "rgba(56,189,248,0.7)";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function connectParticles() {
+      const maxDistance = 120;
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a + 1; b < particles.length; b++) {
+          let dx = particles[a].x - particles[b].x;
+          let dy = particles[a].y - particles[b].y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            ctx.strokeStyle = "rgba(56,189,248," + (1 - distance / maxDistance) + ")";
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      connectParticles();
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+  </script>
+</body>
+</html>
+
